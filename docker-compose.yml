@@ -2,8 +2,9 @@ services:
   mediaflow-proxy:
     ports:
       - "8888:8888"
-    env_file:
-      - .env
+environment:
+      API_PASSWORD: mfp
+      TRANSPORT_ROUTES: '{ "all://*.ichigotv.net": { "verify_ssl": false }, "all://ichigotv.net": { "verify_ssl": false } }'
     restart: always
     logging:
       options:
